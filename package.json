@@ -1,0 +1,24 @@
+{
+  "name": "curso_node_05_clima_app",
+  "version": "1.0.0",
+  "description": "Aplicación Node para ver el clima de una ciud",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monzonprog/curso_node_05_clima_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Monzonprog/curso_node_05_clima_app/issues"
+  },
+  "homepage": "https://github.com/Monzonprog/curso_node_05_clima_app#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "7.3.3"
+  }
+}

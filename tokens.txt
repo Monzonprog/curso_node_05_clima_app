@@ -1,3 +1,0 @@
-MAPBOX_KEY = pk.eyJ1Ijoiam1vbnpvbm0iLCJhIjoiY2t0YnM4Y3U5MDVvdTJudGQzN3VnaXhzZCJ9.MW5Lb-K-V3HCNgJ5SaxV8w
-
-https://api.mapbox.com/geocoding/v5/mapbox.places/toledo.json?language=es&autocomplete=true&access_token=pk.eyJ1Ijoiam1vbnpvbm0iLCJhIjoiY2t0YnM1ajB4MXlvMTJ3bjlsZnBkZzdxdCJ9.C4ycOyJaGcnGDRnWl8zr_A

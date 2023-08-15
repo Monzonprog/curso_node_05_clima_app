@@ -5,6 +5,7 @@ const {
     inquirerMenu,
     pausa,
     listarLugares,
+    climaLugar
 } = require('./helpers/inquirer');
 const Busquedas = require('./models/busquedas');
 
@@ -25,16 +26,20 @@ const main = async () => {
                 const id = await listarLugares(lugares);
                 const lugarSel = lugares.find((l) => l.id == id);
 
+                const temp = await busquedas.climaLugar(lugarSel.lat, lugarSel.lng);
+
                 //Clima
 
                 //Mostrar resultados
+                console.clear();
                 console.log('\nInformación de la ciudad\n'.green);
-                console.log('Ciudad: ', lugarSel.nombre);
+                console.log('Ciudad: ', lugarSel.nombre.green);
                 console.log('Lat: ', lugarSel.lat);
                 console.log('Lng: ', lugarSel.lng);
-                console.log('Temperatura:');
-                console.log('Mínima:');
-                console.log('Máxima:');
+                console.log('Temperatura: ', temp.temp);
+                console.log('Mínima:', temp.min);
+                console.log('Máxima:', temp.max);
+                console.log('Como está el clima: ', temp.desc.green);
                 break;
 
             case 2:

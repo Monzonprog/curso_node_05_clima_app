@@ -5,7 +5,7 @@ const {
     inquirerMenu,
     pausa,
     listarLugares,
-    climaLugar
+    climaLugar,
 } = require('./helpers/inquirer');
 const Busquedas = require('./models/busquedas');
 
@@ -24,9 +24,15 @@ const main = async () => {
                 const lugares = await busquedas.ciudad(termino);
                 //Seleccionar el lugar
                 const id = await listarLugares(lugares);
-                const lugarSel = lugares.find((l) => l.id == id);
+                if (id === '0') continue;
 
-                const temp = await busquedas.climaLugar(lugarSel.lat, lugarSel.lng);
+                const lugarSel = lugares.find((l) => l.id == id);
+                busquedas.agregarHistorial(lugarSel.nombre.toLowerCase());
+
+                const temp = await busquedas.climaLugar(
+                    lugarSel.lat,
+                    lugarSel.lng
+                );
 
                 //Clima
 
@@ -43,7 +49,10 @@ const main = async () => {
                 break;
 
             case 2:
-                break;
+                busquedas.historialCapitalizado.forEach((lugar, i) => {
+                    const idx = `${i + 1}.`.green;
+                    console.log(`${idx} ${lugar} `);
+                });
         }
 
         if (opt !== 0) await pausa();
